@@ -2,7 +2,8 @@
 
 import { makePottery } from "./PotteryWheel.js"
 import { firePottery } from "./Kiln.js"
-import { toSellOrNotToSell } from "./PotteryCatalog.js"
+import { toSellOrNotToSell, usePottery } from "./PotteryCatalog.js"
+import { potteryList } from "./PotteryList.js"
 
 
 // Make 5 pieces of pottery at the wheel
@@ -10,7 +11,7 @@ let mug = makePottery("mug", 3, 10)
 let plate = makePottery("plate", 2, 3)
 let bowl = makePottery("bowl", 2, 3)
 let platter = makePottery("platter", 6, 4)
-let vase = makePottery("vase", 6, 25)
+let vase = makePottery("vase", 8, 25)
 
 // console.log(mug)
 // console.log(plate)
@@ -41,12 +42,23 @@ const bowlCheck = toSellOrNotToSell(firedBowl)
 const platterCheck = toSellOrNotToSell(firedPlatter)
 const vaseCheck = toSellOrNotToSell(firedVase)
 
-console.log(mugCheck)
-console.log(plateCheck)
-console.log(bowlCheck)
-console.log(platterCheck)
-console.log(vaseCheck)
+const printSellable = usePottery()
+
+for (const each of printSellable) {
+  console.log(`${each.shape} - ${each.height}cm  - ${each.weight}lbs. - ${each.id}`)
+}
+
+
+// console.log(mugCheck)
+// console.log(plateCheck)
+// console.log(bowlCheck)
+// console.log(platterCheck)
+// console.log(vaseCheck)
 
 
 // Invoke the component function that renders the HTML list
 
+const potteryHTML = potteryList();
+
+const showMe = document.getElementById('potteryHTML')
+showMe.innerHTML = potteryHTML

@@ -21,7 +21,11 @@ export const toSellOrNotToSell = (finishedPotteryPiece) => {
   return sellablePottery;
 };
 
+
 export const usePottery = () => {
     const potteryCabinet = JSON.parse(JSON.stringify(sellablePottery))
     return potteryCabinet
 }
+
+// const testPotteryFunction = usePottery()
+// console.log(testPotteryFunction)
