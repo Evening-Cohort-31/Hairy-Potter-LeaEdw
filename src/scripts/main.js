@@ -42,23 +42,14 @@ const bowlCheck = toSellOrNotToSell(firedBowl)
 const platterCheck = toSellOrNotToSell(firedPlatter)
 const vaseCheck = toSellOrNotToSell(firedVase)
 
-const printSellable = usePottery()
-
-for (const each of printSellable) {
-  console.log(`${each.shape} - ${each.height}cm  - ${each.weight}lbs. - ${each.id}`)
-}
-
-
-// console.log(mugCheck)
-// console.log(plateCheck)
-// console.log(bowlCheck)
-// console.log(platterCheck)
-// console.log(vaseCheck)
+// for (const each of potteryTable) {
+//   console.log(`${each.shape} - ${each.height}cm  - ${each.weight}lbs. - ${each.id}`)
+// }
 
 
 // Invoke the component function that renders the HTML list
 
-const potteryHTML = potteryList();
+const dynamicPotteryHTML = potteryList();
 
-const showMe = document.getElementById('potteryHTML')
-showMe.innerHTML = potteryHTML
+let showMe = document.getElementById("potteryHTML")
+showMe.innerHTML = dynamicPotteryHTML

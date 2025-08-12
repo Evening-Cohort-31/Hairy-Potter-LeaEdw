@@ -120,12 +120,12 @@ In the `main.js` module, invoke the `PotteryList` component function. Take its r
 > 🧨 Before you click the "Assessment Complete" button on the Learning Platform, add your answers below for each question and make a commit. It is your option to request a face-to-face meeting with a coach for a vocabulary review.
 
 1. Explain how you got the HTML, with the correct data, displayed in the browser?
-   > Your answer here
+   > I created a function that iterates the data (the usePottery() function) then I used document.getElementByID(potteryHTML) assigned to the 'showMe" variable and set its innerHTML to be the iterated function (potteryList() with the variable name: dynamicPotteryHTML).
 2. In the **PotteryList** module, when you iterate your pottery, you need to show the evidence of what the **weight** property's value is for the 2nd piece of pottery. Use [Loom](https://www.loom.com/) to record your browser window with the developer tools open and show those values.
-   > Paste your video's public URL here
+   > [potteryList() Loom](https://www.loom.com/share/9119547c16bb466c9c80ddd9180a5636)
 3. The **PotteryWheel** module has a single function named `makePottery`. Why doesn't that module have all of the other code in it?
-   > Your answer here
+   > Having modules that separate the code is beneficial because it helps to organize the code so making adjustments easier. Instead of having to search one file to find a function each module has its own space
 4. The pottery shop has learned that there is a set of customers that are willing to buy cracked pottery at a discounted price of $2.50. That means that the cracked pottery should now be displayed in the catalog. Explain the changes that this new business strategy would cause to your algorithm.
-   > Your answer here
+   > In order to accommodate for the cracked pieces, in the PotteryCatalog.js module I would add a new "filter" to the toSellOrNotToSell() function to check that the cracked property is true. The items that return true for the cracked property will be given a property of price = $2.50 and then will be added (pushed) into the sellablePottery array. This way, they can be efficiently displayed without having to add a completely new function to display and can be rendered like the uncracked pottery and the other properties will be displayed properly with the price at $2.50. I might add a new message for the customer to know that the discounted piece is in fact crack and that there will be no refunds for the pieces sold under that category.
 5. In the **Kiln** module, you have a `firePottery()` function. You need to demonstrate how to use the debugger to verify the values of the parameters for that function when your code runs. Use [Loom](https://www.loom.com/) to record your browser window with the developer tools open and show those values.
-   > Paste your video's public URL here
+   > [firePottery()](https://www.loom.com/share/97bb3ba78c384a44bd08e744ef9a57ae)

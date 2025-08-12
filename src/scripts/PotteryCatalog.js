@@ -8,24 +8,29 @@ export const toSellOrNotToSell = (finishedPotteryPiece) => {
     finishedPotteryPiece.weight >= 6 &&
     finishedPotteryPiece.cracked === false
   ) {
-    finishedPotteryPiece.price = 40;
+    finishedPotteryPiece.price = 40.00;
     sellablePottery.push(finishedPotteryPiece);
+    console.log(`The ${finishedPotteryPiece.shape} is for sale.`);
   } else if (
     finishedPotteryPiece.weight < 6 &&
     finishedPotteryPiece.cracked === false
   ) {
-    finishedPotteryPiece.price = 20;
+    finishedPotteryPiece.price = 20.00;
     sellablePottery.push(finishedPotteryPiece);
-  }
+    console.log(`The ${finishedPotteryPiece.shape} is for sale.`);
+  } 
+};
 
-  return sellablePottery;
+export const usePottery = () => {
+  let potteryForSale = structuredClone(sellablePottery);
+  return potteryForSale;
 };
 
 
-export const usePottery = () => {
-    const potteryCabinet = JSON.parse(JSON.stringify(sellablePottery))
-    return potteryCabinet
-}
+// export const usePottery = () => {
+//     const potteryCabinet = JSON.parse(JSON.stringify(sellablePottery))
+//     return potteryCabinet
+// }
 
 // const testPotteryFunction = usePottery()
 // console.log(testPotteryFunction)
